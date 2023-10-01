@@ -12,18 +12,41 @@
 }
 
 .App {
-	position: relative;
 	min-height: 100dvh;
 
-	.btns {
-		display: flex;
-		justify-content: space-between;
-		padding-inline: 18px;
+	.nav {
+		padding-block: 30px;
 
-		button {
-			background-color: blue;
-			padding: 16px 20px;
-			border-radius: 50px;
+		&Wrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
 		}
+
+		.navList {
+			display: flex;
+			gap: 24px;
+		}
+	}
+
+	.container {
+		max-width: 1200px;
+		margin-inline: auto;
+	}
+
+	.btn {
+		border-radius: 12px;
+		border: 1px solid #1693eb;
+		background: #1693eb;
+		color: white;
+		padding: 20px 45px;
+	}
+
+	.icon {
+		border-radius: 50px;
+		border: 1px solid #fff;
+		background: #1693eb;
+		display: inline-block;
+		padding: 10px 12px;
 	}
 }
