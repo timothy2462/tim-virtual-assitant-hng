@@ -2,7 +2,6 @@
 	width: 110px;
 	aspect-ratio: 1 / 1;
 	padding: 20px;
-	position: absolute;
 	border: 2px solid black;
 	border-radius: 100px;
 
@@ -46,7 +45,79 @@
 		border-radius: 50px;
 		border: 1px solid #fff;
 		background: #1693eb;
-		display: inline-block;
-		padding: 10px 12px;
+		padding: 10px;
+		display: grid;
+		place-items: center;
+		transition: transform 0.5s ease-in-out;
 	}
+
+	.heroSection {
+		margin-top: 24px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 24px;
+
+		.content {
+			margin-top: 80px;
+			display: flex;
+			flex-direction: column;
+			gap: 30px;
+		}
+
+		.heroTitle {
+			color: #063658;
+			font-size: 50px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+		}
+	}
+
+	.flexBTN {
+		display: flex;
+		gap: 20px;
+		align-items: center;
+	}
+
+	.cardsSection {
+		background-color: #1693eb;
+		min-height: 600px;
+		margin-top: 30px;
+		display: grid;
+		place-items: center;
+		padding: 50px 20px;
+
+		.hairCards {
+			min-height: 300px;
+
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 24px;
+
+			.hairCard {
+				max-width: 390px;
+				background-color: white;
+				border-radius: 30px;
+				overflow: hidden;
+
+				h3 {
+					color: #063658;
+					font-size: 30px;
+				}
+
+				.info {
+					display: flex;
+					justify-content: space-between;
+					padding-inline: 24px;
+					padding-block: 16px;
+					align-items: center;
+				}
+			}
+		}
+	}
+}
+
+footer {
+	background-color: #0a0807;
+	min-height: 230px;
 }

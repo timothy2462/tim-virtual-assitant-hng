@@ -1,10 +1,11 @@
 import { useRef, useState } from "react";
 import "./App.scss";
-
+import profile from "./hair";
 import logo from "./assets/HAIRXNAME.png";
+import guy from "./assets/guy.webp";
 
 function App() {
-	const [, setIsResetScheduled] = useState(false);
+	const [restarted, setIsResetScheduled] = useState(false);
 	const [popup, setPopup] = useState(false);
 	const [popupMsg, setPopupMsg] = useState("Hello");
 	const resetTimeoutRef = useRef<ReturnType<
@@ -28,7 +29,7 @@ function App() {
 	// 		"data-message",
 	// 	);
 	// 	setPopupMsg(messageData || "");
-	// 	console.log("messageData: ", messageData);
+	//
 	// 	const targetX = e.pageX;
 	// 	const targetY = e.pageY;
 	// 	const clampedX = Math.max(0, Math.min(initialX, targetX));
@@ -52,13 +53,13 @@ function App() {
 			"data-message",
 		);
 		setPopupMsg(messageData || "");
-		console.log("messageData: ", messageData);
+
 		const targetX = e.pageX;
 		const targetY = e.pageY;
 		const clampedX = Math.max(0, Math.min(initialX, targetX));
 		const clampedY = Math.max(0, Math.min(initialY, targetY));
 
-		setBallPosition({ x: clampedX, y: clampedY });
+		setBallPosition({ x: clampedX, y: targetY });
 		setIsResetScheduled(true);
 		setPopup(true);
 
@@ -83,6 +84,7 @@ function App() {
 				transform: `translate(${
 					ballPosition.x ? ballPosition.x : initialX
 				}px, ${ballPosition.y ? ballPosition.y : initialY}px)`,
+				position: (restarted && "absolute") || "fixed",
 			}}>
 			<h3>ProFile</h3>
 			{popup && <p>{popupMsg}</p>}
@@ -119,7 +121,7 @@ function App() {
 							<li>Contact</li>
 						</ul>
 
-						<div className="">
+						<div className="flexBTN">
 							<button
 								className="btn"
 								data-assist="Explain Button">
@@ -129,10 +131,63 @@ function App() {
 						</div>
 					</div>
 				</nav>
-				<section className="container">
-					<IconBTN data="Hello World" />
+				<section className="container heroSection">
+					<div className="">
+						<div className="content">
+							<h1 className="heroTitle">
+								Mane Mode: Elevate Your Style at Our Premier Men's
+								Hair Salon
+							</h1>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing
+								elit. Eu tempor amet viverra ut semper mattis. Sed
+								massa nulla mi tortor viverra. Eget non augue aliquam
+								mi, commodo gravida id nullam erat. Sollicitudin sem.
+							</p>
+							<div className="heroBtn flexBTN">
+								<button
+									className="btn"
+									data-assist="Explain Button">
+									Hmm....🤔
+								</button>
+								<IconBTN />
+							</div>
+						</div>
+					</div>
+					<div className="">
+						<img
+							draggable="false"
+							src={guy}
+						/>
+					</div>
+				</section>
+				<section className="cardsSection">
+					<div className="container hairCards">
+						{profile.map(
+							(
+								item: {
+									image: string;
+									name: string;
+									description?: string;
+								},
+								index,
+							) => (
+								<div
+									className="hairCard"
+									key={index}>
+									<img src={item.image} />
+									<div className="info">
+										<h3>{item.name}</h3>
+										<IconBTN />
+									</div>
+								</div>
+							),
+						)}
+					</div>
 				</section>
 			</div>
+
+			<footer></footer>
 		</>
 	);
 }
