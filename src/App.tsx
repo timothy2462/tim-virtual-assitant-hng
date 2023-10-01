@@ -21,31 +21,6 @@ function App() {
 	const initialX = window.innerWidth - 200;
 	const initialY = window.innerHeight - 200;
 
-	//
-	// const handleClick = (
-	// 	e: React.MouseEvent<HTMLButtonElement>,
-	// ) => {
-	// 	const messageData = (e.target as HTMLElement).getAttribute(
-	// 		"data-message",
-	// 	);
-	// 	setPopupMsg(messageData || "");
-	//
-	// 	const targetX = e.pageX;
-	// 	const targetY = e.pageY;
-	// 	const clampedX = Math.max(0, Math.min(initialX, targetX));
-	// 	const clampedY = Math.max(0, Math.min(initialY, targetY));
-
-	// 	setBallPosition({ x: clampedX, y: clampedY });
-	// 	setIsResetScheduled(true);
-	// 	setPopup(true);
-	// 	// Schedule the reset after 40 seconds (40,000 milliseconds)
-	// 	setTimeout(() => {
-	// 		setBallPosition({ x: 0, y: 0 });
-	// 		setIsResetScheduled(false);
-	// 		setPopup(false);
-	// 	}, 10000);
-	// };
-
 	const handleClick = (
 		e: React.MouseEvent<HTMLButtonElement>,
 	) => {
@@ -86,8 +61,13 @@ function App() {
 				}px, ${ballPosition.y ? ballPosition.y : initialY}px)`,
 				position: (restarted && "absolute") || "fixed",
 			}}>
-			<h3>ProFile</h3>
-			{popup && <p>{popupMsg}</p>}
+			<div className="clip">HELP</div>
+
+			{popup && (
+				<div className="assistantMsg">
+					<p>{popupMsg}</p>
+				</div>
+			)}
 		</div>
 	);
 
@@ -135,8 +115,8 @@ function App() {
 					<div className="">
 						<div className="content">
 							<h1 className="heroTitle">
-								Mane Mode: Elevate Your Style at Our Premier Men's
-								Hair Salon
+								Mane Mode: Elevate Your Story hire our handsome male
+								model and story tellers
 							</h1>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -147,10 +127,10 @@ function App() {
 							<div className="heroBtn flexBTN">
 								<button
 									className="btn"
-									data-assist="Explain Button">
+									data-assist="hh">
 									Hmm....🤔
 								</button>
-								<IconBTN />
+								<IconBTN data="Hello and welcome to our website! We are delighted to have you as our guest. Our virtual assistant is here to assist you with any questions or concerns you may have. Feel free to explore our website and let us know how we can help you. Enjoy your stay!" />
 							</div>
 						</div>
 					</div>
@@ -168,7 +148,7 @@ function App() {
 								item: {
 									image: string;
 									name: string;
-									description?: string;
+									data?: string;
 								},
 								index,
 							) => (
@@ -178,7 +158,7 @@ function App() {
 									<img src={item.image} />
 									<div className="info">
 										<h3>{item.name}</h3>
-										<IconBTN />
+										<IconBTN data={item.data} />
 									</div>
 								</div>
 							),

@@ -1,13 +1,24 @@
 .ball {
-	width: 110px;
-	aspect-ratio: 1 / 1;
-	padding: 20px;
-	border: 2px solid black;
-	border-radius: 100px;
-
-	background-color: grey;
 	transition: transform 0.5s ease-in-out;
-	transform: translate(4dvw, 80vdh);
+	.clip {
+		width: 110px;
+		overflow: hidden;
+		border: 2px solid black;
+		border-radius: 100px;
+	}
+	.assistantMsg {
+		position: absolute;
+		bottom: 0;
+		/* max-width: 300px; */
+		background-color: white;
+		padding: 8px;
+		border: 1px solid;
+		border-radius: 8px;
+		font-size: 12px;
+		right: 116px;
+		/* left: 0; */
+		width: 178px;
+	}
 }
 
 .App {
@@ -102,7 +113,8 @@
 
 				h3 {
 					color: #063658;
-					font-size: 30px;
+					font-size: 24px;
+					text-transform: capitalize;
 				}
 
 				.info {
