@@ -57,7 +57,7 @@ function App() {
 		const targetX = e.pageX;
 		const targetY = e.pageY;
 		const clampedX = Math.max(0, Math.min(initialX, targetX));
-		const clampedY = Math.max(0, Math.min(initialY, targetY));
+		// const clampedY = Math.max(0, Math.min(initialY, targetY));
 
 		setBallPosition({ x: clampedX, y: targetY });
 		setIsResetScheduled(true);
