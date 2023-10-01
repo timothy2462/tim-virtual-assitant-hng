@@ -1,0 +1,29 @@
+.ball {
+	width: 110px;
+	aspect-ratio: 1 / 1;
+	padding: 20px;
+	position: absolute;
+	border: 2px solid black;
+	border-radius: 100px;
+
+	background-color: grey;
+	transition: transform 0.5s ease-in-out;
+	transform: translate(4dvw, 80vdh);
+}
+
+.App {
+	position: relative;
+	min-height: 100dvh;
+
+	.btns {
+		display: flex;
+		justify-content: space-between;
+		padding-inline: 18px;
+
+		button {
+			background-color: blue;
+			padding: 16px 20px;
+			border-radius: 50px;
+		}
+	}
+}
