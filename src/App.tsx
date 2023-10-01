@@ -3,8 +3,19 @@ import "./App.scss";
 import profile from "./hair";
 import logo from "./assets/HAIRXNAME.png";
 import guy from "./assets/guy.webp";
+import { useLottie } from "lottie-react";
+import animationData from "./assets/animation_ln7fp7v2.json";
 
 function App() {
+	const defaultOptions = {
+		loop: true,
+		autoplay: true,
+		animationData: animationData,
+		rendererSettings: {
+			preserveAspectRatio: "xMidYMid slice",
+		},
+	};
+	const { View } = useLottie(defaultOptions);
 	const [restarted, setIsResetScheduled] = useState(false);
 	const [popup, setPopup] = useState(false);
 	const [popupMsg, setPopupMsg] = useState("Hello");
@@ -61,7 +72,7 @@ function App() {
 				}px, ${ballPosition.y ? ballPosition.y : initialY}px)`,
 				position: (restarted && "absolute") || "fixed",
 			}}>
-			<div className="clip">HELP</div>
+			<div className="clip">{View}</div>
 
 			{popup && (
 				<div className="assistantMsg">
