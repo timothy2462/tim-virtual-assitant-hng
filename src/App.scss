@@ -9,14 +9,12 @@
 	.assistantMsg {
 		position: absolute;
 		bottom: 0;
-		/* max-width: 300px; */
 		background-color: white;
 		padding: 8px;
 		border: 1px solid;
 		border-radius: 8px;
 		font-size: 12px;
 		right: 116px;
-		/* left: 0; */
 		width: 178px;
 	}
 }
@@ -35,7 +33,7 @@
 
 		.navList {
 			display: flex;
-			gap: 24px;
+			gap: 34px;
 		}
 	}
 
@@ -46,26 +44,29 @@
 
 	.btn {
 		border-radius: 12px;
-		border: 1px solid #1693eb;
-		background: #1693eb;
+		border: 1px solid crimson;
+		background: crimson;
 		color: white;
 		padding: 20px 45px;
+		// cursor: pointer;
 	}
 
 	.icon {
 		border-radius: 50px;
 		border: 1px solid #fff;
-		background: #1693eb;
+		background: crimson;
 		padding: 10px;
 		display: grid;
 		place-items: center;
 		transition: transform 0.5s ease-in-out;
+		cursor: pointer;
 	}
 
 	.heroSection {
 		margin-top: 24px;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
+		place-items: center;
 		gap: 24px;
 
 		.content {
@@ -74,9 +75,10 @@
 			flex-direction: column;
 			gap: 30px;
 		}
+		
 
 		.heroTitle {
-			color: #063658;
+			color: crimson;
 			font-size: 50px;
 			font-style: normal;
 			font-weight: 700;
@@ -91,7 +93,7 @@
 	}
 
 	.cardsSection {
-		background-color: #1693eb;
+		background-color:rgba(64, 64, 64, 1);
 		min-height: 600px;
 		margin-top: 30px;
 		display: grid;
@@ -112,7 +114,7 @@
 				overflow: hidden;
 
 				h3 {
-					color: #063658;
+					color:crimson;
 					font-size: 24px;
 					text-transform: capitalize;
 				}
@@ -132,4 +134,12 @@
 footer {
 	background-color: #0a0807;
 	min-height: 230px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+footer p{
+	color: #fff;
+	font-size: .9rem;
+	font-weight: 600;
 }

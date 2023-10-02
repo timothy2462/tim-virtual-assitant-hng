@@ -1,8 +1,7 @@
 import { useRef, useState } from "react";
 import "./App.scss";
 import profile from "./hair";
-import logo from "./assets/HAIRXNAME.png";
-import guy from "./assets/guy.webp";
+import allStars from "./assets/Nigeria-Artistes.png";
 import { useLottie } from "lottie-react";
 import animationData from "./assets/animation_ln7fp7v2.json";
 
@@ -28,7 +27,7 @@ function App() {
 		y: number;
 	}>({ x: 0, y: 0 });
 
-	// Reset the ball position
+	// changes and reset ball position
 	const initialX = window.innerWidth - 200;
 	const initialY = window.innerHeight - 200;
 
@@ -43,18 +42,18 @@ function App() {
 		const targetX = e.pageX;
 		const targetY = e.pageY;
 		const clampedX = Math.max(0, Math.min(initialX, targetX));
-		// const clampedY = Math.max(0, Math.min(initialY, targetY));
+		
 
 		setBallPosition({ x: clampedX, y: targetY });
 		setIsResetScheduled(true);
 		setPopup(true);
 
-		// Clear previous timeout if exists
+		// im clearing the previoustimeout if exists
 		if (resetTimeoutRef.current) {
 			clearTimeout(resetTimeoutRef.current);
 		}
 
-		// Schedule the reset after 10 seconds (10,000 milliseconds)
+		// reset after 10 seconds (10,000 milliseconds)
 		const resetTimeout = setTimeout(() => {
 			setBallPosition({ x: 0, y: 0 });
 			setIsResetScheduled(false);
@@ -101,9 +100,7 @@ function App() {
 			<div className="App">
 				<nav className="nav">
 					<div className="container navWrapper">
-						<div className="logo">
-							<img src={logo} />
-						</div>
+						
 
 						<ul className="navList">
 							<li>Home</li>
@@ -115,8 +112,8 @@ function App() {
 						<div className="flexBTN">
 							<button
 								className="btn"
-								data-assist="Explain Button">
-								Explain Button
+								data-assist="This is an explain button">
+								Explain
 							</button>
 							<IconBTN />
 						</div>
@@ -126,20 +123,16 @@ function App() {
 					<div className="">
 						<div className="content">
 							<h1 className="heroTitle">
-								Mane Mode: Elevate Your Story hire our handsome male
-								model and story tellers
+                             Welcome to Naijahub where you get to know about your favourite Nigerian celebrity
 							</h1>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing
-								elit. Eu tempor amet viverra ut semper mattis. Sed
-								massa nulla mi tortor viverra. Eget non augue aliquam
-								mi, commodo gravida id nullam erat. Sollicitudin sem.
+                            Dive into the world of Nigerian stars! From trending news to exclusive features, explore the lives and achievements of your favorite celebrities. Uncover the glitz, glamour, and stories that define the vibrant tapestry of Nigeria's entertainment elite. Your front-row seat to the captivating realm of CelebNaija awaits
 							</p>
 							<div className="heroBtn flexBTN">
 								<button
 									className="btn"
 									data-assist="hh">
-									Hmm....🤔
+									Explore
 								</button>
 								<IconBTN data="Hello and welcome to our website! We are delighted to have you as our guest. Our virtual assistant is here to assist you with any questions or concerns you may have. Feel free to explore our website and let us know how we can help you. Enjoy your stay!" />
 							</div>
@@ -148,7 +141,7 @@ function App() {
 					<div className="">
 						<img
 							draggable="false"
-							src={guy}
+							src={allStars}
 						/>
 					</div>
 				</section>
@@ -178,7 +171,9 @@ function App() {
 				</section>
 			</div>
 
-			<footer></footer>
+			<footer>
+                <p>Website by Timothy Akobundu </p>
+            </footer>
 		</>
 	);
 }
